@@ -111,7 +111,7 @@ const faqs = [
             </div>
         </section>
 
-        <section class="py-20 bg-white mx-16">
+        <section class="py-20 bg-white mx-2 md:mx-12">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-bold text-teal-700 mb-4">Kenapa Memilih Velox?</h2>
@@ -131,7 +131,7 @@ const faqs = [
             </div>
         </section>
 
-        <section class="py-20 bg-gray-50 mx-16">
+        <section class="py-20 bg-gray-50 mx-2 md:mx-12">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-bold text-teal-700 mb-2">Destinasi Favorit</h2>
@@ -150,7 +150,7 @@ const faqs = [
             </div>
         </section>
 
-        <section class="py-20 bg-white overflow-hidden mx-16">
+        <section class="py-20 bg-white overflow-hidden mx-2 md:mx-12">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-teal-700 mb-12">Kata Mereka Tentang Kami</h2>
                 <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -176,7 +176,7 @@ const faqs = [
             </div>
         </section>
 
-        <section class="py-20 bg-teal-900 text-white overflow-hidden px-16">
+        <section class="py-20 bg-teal-900 text-white overflow-hidden px-2 md:px-12">
             <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
 
                 <div>

@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen font-sans text-gray-800">
     
     <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all border-b border-gray-100">
-      <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+      <div class="container mx-auto px-16 h-20 flex justify-between items-center">
         <NuxtLink to="/" class="text-2xl font-bold text-teal-700 flex items-center gap-2">
           <span>✈️ Velox Journey</span>
         </NuxtLink>
