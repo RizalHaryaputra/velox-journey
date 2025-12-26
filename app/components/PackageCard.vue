@@ -26,9 +26,12 @@
                         Rp {{ Number(paket.price).toLocaleString('id-ID') }}
                     </p>
                 </div>
-                <button class="bg-teal-50 text-teal-600 p-2 rounded-lg hover:bg-teal-600 hover:text-white transition">
+
+                <NuxtLink :to="`/packages/${paket.id}`" class="bg-teal-50 text-teal-600 p-2 rounded-lg
+                 hover:bg-teal-600 hover:text-white transition
+                 flex items-center justify-center" aria-label="Lihat detail paket">
                     <Icon name="heroicons:arrow-right" size="20" />
-                </button>
+                </NuxtLink>
             </div>
         </div>
     </div>

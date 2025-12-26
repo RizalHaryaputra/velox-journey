@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen font-sans text-gray-800">
     
     <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all border-b border-gray-100">
-      <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+      <div class="container mx-auto px-16 h-20 flex justify-between items-center">
         <NuxtLink to="/" class="text-2xl font-bold text-teal-700 flex items-center gap-2">
           <span>✈️ Velox Journey</span>
         </NuxtLink>
@@ -25,7 +25,7 @@
 
     <footer class="bg-slate-900 text-white py-8 mt-auto">
       <div class="container mx-auto px-6 text-center">
-        <p class="mb-2 text-gray-400">© 2024 Velox Journey. Private Trip Specialist.</p>
+        <p class="mb-2 text-gray-400">© {{ new Date().getFullYear() }} Velox Journey. Private Trip Specialist.</p>
         <div class="flex justify-center gap-4 text-sm text-gray-500">
           <span class="cursor-pointer hover:text-white">Instagram</span>
           <span class="cursor-pointer hover:text-white">WhatsApp</span>
