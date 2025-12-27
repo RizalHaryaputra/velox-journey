@@ -4,7 +4,7 @@ const teamMembers = [
     {
         name: "Rizal Haryaputra",
         role: "Founder & CEO",
-        image: "http://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWFufGVufDB8fDB8fHww",
+        image: "/images/my-photo.jpg",
         quote: "Traveling bukan sekadar jalan-jalan, tapi tentang menemukan diri sendiri."
     },
     {

@@ -62,7 +62,7 @@ const testimonials = [
     },
     {
         name: "Michael Tan",
-        role: "Tech Lead, Singapore",
+        role: "Tech Lead, Yogyakarta",
         avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
         text: "Private trip paling seamless yang pernah saya coba. Admin fast response, hotelnya juga sesuai request. Highly recommended.",
         stars: 5
@@ -88,7 +88,7 @@ const faqs = [
 
 <template>
     <div>
-        <section class="relative h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
+        <section class="relative min-h-[calc(100vh-80px)] flex items-center justify-center text-center text-white overflow-hidden">
             <div class="absolute inset-0 bg-black/50 z-10"></div>
             <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop"
                 class="absolute inset-0 w-full h-full object-cover" alt="Travel Background" />
