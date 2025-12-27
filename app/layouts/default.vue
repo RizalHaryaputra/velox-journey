@@ -22,7 +22,7 @@ watch(() => route.fullPath, () => {
       class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all border-b border-gray-100">
       <div class="container mx-auto px-6 lg:px-16 h-20 flex justify-between items-center">
 
-        <NuxtLink to="/" class="text-2xl font-bold text-teal-700 flex items-center gap-2 z-50 relative">
+        <NuxtLink to="/" class="text-velox text-2xl font-bold text-teal-700 flex items-center gap-2 z-50 relative">
           <img src="/images/logo.png" onerror="this.style.display='none'" alt="Velox" class="w-12 h-12 object-contain rounded-full" />
           <span>Velox Journey</span>
         </NuxtLink>
@@ -97,5 +97,9 @@ nav .router-link-active.bg-teal-600 {
 
 div .router-link-active.contact-btn {
   color: white !important;
+}
+
+.router-link-active.text-velox {
+  color:#0f766e;
 }
 </style>
