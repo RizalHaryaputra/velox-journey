@@ -130,14 +130,21 @@ const changePage = (page) => {
 <template>
     <div class="bg-gray-50 min-h-screen pb-20">
 
-        <header class="mt-12 mb-8 px-6 text-center">
-            <h1 class="text-3xl md:text-5xl font-bold mb-4 text-teal-700">Jelajahi Paket Wisata</h1>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                Temukan destinasi impian Anda dari pegunungan hingga dasar laut.
-            </p>
+        <header class="bg-teal-900 text-white pt-20 pb-20 px-6 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-5">
+                <Icon name="heroicons:globe-americas" class="text-[400px] absolute -right-20 -top-20" />
+            </div>
+
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <span class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">Paket Wisata</span>
+                <h1 class="text-3xl md:text-5xl font-bold mb-6">Jelajahi Paket Wisata yang Anda Impikan</h1>
+                <p class="text-teal-100 text-lg leading-relaxed">
+                    Temukan destinasi impian Anda dari pegunungan hingga dasar laut.
+                </p>
+            </div>
         </header>
 
-        <div class="container mx-auto px-6 lg:px-16 mt-8 mb-12">
+        <div class="container mx-auto px-6 lg:px-16 mt-8">
 
             <div
                 class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col lg:flex-row gap-6 items-center justify-between">
