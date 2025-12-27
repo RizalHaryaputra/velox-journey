@@ -124,7 +124,7 @@ const toggleInterest = (label) => {
                             </select>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Rencana Tanggal</label>
                                 <input v-model="form.date" type="date"
