@@ -2,63 +2,12 @@
 const route = useRoute()
 const id = route.params.id
 
-// --- DATA DUMMY DETAIL (Simulasi Database) ---
-// Nanti kita ganti ini dengan fetch data dari Firebase berdasarkan ID
-const packageDetail = ref({
-    id: id,
-    title: "Eksotisme Pasir Putih Jogja Selatan",
-    location: "Gunungkidul, Yogyakarta",
-    price: 2500000,
-    duration: "3 Hari 2 Malam",
-    description: "Rasakan pengalaman liburan tak terlupakan di deretan pantai pasir putih Gunungkidul. Paket ini dirancang khusus untuk Anda yang ingin menikmati laut lepas, sunset romantis, dan kuliner seafood segar tanpa repot mengurus transportasi dan tiket.",
-    images: [
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1520520731457-9283dd14aa66?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    ],
-    facilities: [
-        "Private Transport (Innova/Hiace)",
-        "Hotel Bintang 3/4 (2 Malam)",
-        "Makan 7x (Termasuk Seafood Jimbaran)",
-        "Tiket Masuk Wisata",
-        "Dokumentasi Foto & Video Drone",
-        "P3K Standar"
-    ],
-    itinerary: [
-        {
-            day: 1,
-            title: "Arrival & Beach Hopping",
-            activities: [
-                "08:00 - Penjemputan di Bandara/Stasiun YIA",
-                "10:00 - Perjalanan ke Gunungkidul",
-                "12:00 - Makan Siang Lokal (Sego Abang)",
-                "14:00 - Explore Pantai Indrayanti & Drini",
-                "17:00 - Sunset di Heha Ocean View",
-                "19:00 - Check-in Hotel & Free Time"
-            ]
-        },
-        {
-            day: 2,
-            title: "Cave Tubing & Cliff View",
-            activities: [
-                "07:00 - Breakfast di Hotel",
-                "09:00 - Cave Tubing Pindul / Kalisuci",
-                "12:00 - Makan Siang",
-                "14:00 - Tebing Breksi & Candi Ijo",
-                "19:00 - Dinner Romantic di Bukit Bintang"
-            ]
-        },
-        {
-            day: 3,
-            title: "City Tour & Departure",
-            activities: [
-                "08:00 - Check-out Hotel",
-                "09:00 - Belanja Oleh-oleh Khas Jogja",
-                "11:00 - Wisata Keraton / Tamansari",
-                "13:00 - Drop off Bandara/Stasiun"
-            ]
-        }
-    ]
+// Import Composable
+const { getPackageById } = usePackages()
+
+// Ambil data sesuai ID dari URL
+const packageDetail = computed(() => {
+    return getPackageById(id)
 })
 
 // Fungsi Format Rupiah
@@ -66,10 +15,19 @@ const formatRupiah = (num) => {
     return new Intl.NumberFormat('id-ID').format(num)
 }
 
-// Fungsi Booking (Link ke WA)
+// Fungsi Booking
 const bookingLink = computed(() => {
+    if (!packageDetail.value) return '#'
     const text = `Halo Velox, saya tertarik booking paket: ${packageDetail.value.title}`
     return `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`
+})
+
+// SEO Meta Dinamis
+useSeoMeta({
+    title: () => packageDetail.value ? packageDetail.value.title : 'Paket Tidak Ditemukan',
+    ogTitle: () => packageDetail.value ? `${packageDetail.value.title} | Velox Journey` : 'Velox Journey',
+    description: () => packageDetail.value ? packageDetail.value.description : 'Temukan paket wisata terbaik.',
+    ogImage: () => packageDetail.value ? packageDetail.value.images[0] : '/images/logo.png',
 })
 </script>
 
@@ -155,7 +113,7 @@ const bookingLink = computed(() => {
                         <p class="text-gray-500 text-sm mb-1">Harga Mulai Dari</p>
                         <div class="flex items-end gap-1 mb-6">
                             <span class="text-3xl font-bold text-teal-600">Rp {{ formatRupiah(packageDetail.price)
-                                }}</span>
+                            }}</span>
                             <span class="text-gray-400 text-sm mb-1">/ pax</span>
                         </div>
 

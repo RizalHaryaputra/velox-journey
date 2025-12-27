@@ -1,5 +1,4 @@
 <script setup>
-// 1. DATA DUMMY YANG LEBIH BANYAK (Untuk simulasi pagination)
 const allPackages = ref([
     {
         id: 1,
@@ -53,7 +52,7 @@ const allPackages = ref([
         category: "Honeymoon",
         price: 6500000,
         duration: "3 Hari 2 Malam",
-        image: "https://images.unsplash.com/photo-1598324789736-4861f89564a0?q=80&w=1000"
+        image: "https://images.unsplash.com/photo-1644027622521-d0ca669c40d7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fE51c2ElMjBQZW5pZGF8ZW58MHx8MHx8fDA%3D"
     },
     {
         id: 7,
@@ -75,16 +74,16 @@ const allPackages = ref([
     }
 ])
 
-// 2. STATE (Variable untuk Search & Filter)
+// STATE (Variable untuk Search & Filter)
 const searchQuery = ref('')
 const selectedCategory = ref('All')
 const categories = ['All', 'Nature', 'Adventure', 'Culture', 'Honeymoon']
 
-// 3. PAGINATION STATE
+// PAGINATION STATE
 const currentPage = ref(1)
 const itemsPerPage = 6 // Menampilkan 6 item per halaman
 
-// 4. COMPUTED: Filter & Search Logic
+// COMPUTED: Filter & Search Logic
 const filteredPackages = computed(() => {
     // Reset halaman ke 1 setiap kali user search/filter
     // Note: Kita pakai watcher nanti, tapi logic utamanya di sini
@@ -101,7 +100,7 @@ const filteredPackages = computed(() => {
     })
 })
 
-// 5. COMPUTED: Pagination Slice
+// COMPUTED: Pagination Slice
 // Mengambil data yang sudah difilter, lalu potong sesuai halaman
 const paginatedPackages = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage

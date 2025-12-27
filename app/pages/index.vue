@@ -63,7 +63,7 @@ const testimonials = [
     {
         name: "Michael Tan",
         role: "Tech Lead, Yogyakarta",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+        avatar: "https://i.pravatar.cc/150?img=57",
         text: "Private trip paling seamless yang pernah saya coba. Admin fast response, hotelnya juga sesuai request. Highly recommended.",
         stars: 5
     }

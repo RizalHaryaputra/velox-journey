@@ -23,7 +23,7 @@ watch(() => route.fullPath, () => {
       <div class="container mx-auto px-6 lg:px-16 h-20 flex justify-between items-center">
 
         <NuxtLink to="/" class="text-2xl font-bold text-teal-700 flex items-center gap-2 z-50 relative">
-          <img src="/images/logo.png" onerror="this.style.display='none'" alt="Velox" class="w-8 h-8 object-contain" />
+          <img src="/images/logo.png" onerror="this.style.display='none'" alt="Velox" class="w-12 h-12 object-contain rounded-full" />
           <span>Velox Journey</span>
         </NuxtLink>
 
