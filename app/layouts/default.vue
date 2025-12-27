@@ -11,6 +11,7 @@
           <NuxtLink to="/" class="hover:text-teal-600 transition">Home</NuxtLink>
           <NuxtLink to="/packages" class="hover:text-teal-600 transition">Paket Wisata</NuxtLink>
           <NuxtLink to="/about" class="hover:text-teal-600 transition">Tentang Kami</NuxtLink>
+          <NuxtLink to="/custom-trip" class="hover:text-teal-600 transition">Custom Trip</NuxtLink>
         </nav>
 
         <NuxtLink to="/contact" class="hidden md:block px-5 py-2.5 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition shadow-lg shadow-teal-600/20 font-semibold text-sm">
