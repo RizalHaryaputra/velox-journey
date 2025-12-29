@@ -37,40 +37,61 @@ const contactInfo = [
     {
         icon: 'heroicons:map-pin',
         title: 'Alamat Kantor',
-        desc: 'Jl. Malioboro No. 123, Yogyakarta, Indonesia',
+        desc: 'Sleman, Yogyakarta, Indonesia',
         action: 'Lihat di Peta',
         link: 'https://maps.google.com'
     },
     {
         icon: 'logos:whatsapp-icon',
         title: 'WhatsApp (Fast Resp)',
-        desc: '+62 812-3456-7890',
+        desc: '+62 838-5503-8324',
         action: 'Chat Sekarang',
-        link: 'https://wa.me/6281234567890'
+        link: 'https://wa.me/87855038324'
     },
     {
         icon: 'heroicons:envelope',
         title: 'Email Resmi',
-        desc: 'hello@veloxjourney.com',
+        desc: 'rzlhryptr@gmail.com',
         action: 'Kirim Email',
-        link: 'mailto:hello@veloxjourney.com'
+        link: 'mailto:rzlhryptr@gmail.com'
     }
 ]
 </script>
 
 <template>
-    <div class="bg-gray-50 min-h-screen pb-20">
+    <div class="bg-gray-50 min-h-screen pb-20 overflow-x-hidden">
+        
         <header class="bg-teal-900 text-white pt-20 pb-20 px-6 mb-12 text-center relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-full opacity-5">
-                <Icon name="heroicons:chat-bubble-left-right" class="text-[400px] absolute -right-20 -top-20" />
+                <Icon 
+                    name="heroicons:chat-bubble-left-right" 
+                    class="text-[400px] absolute -right-20 -top-20"
+                    data-aos="zoom-in"
+                    data-aos-duration="2000"
+                />
             </div>
 
             <div class="relative z-10 max-w-3xl mx-auto">
-                <span class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">kontak</span>
-                <h1 class="text-3xl md:text-5xl font-bold mb-6">Hubungi Kami</h1>
-                <p class="text-teal-100 text-lg leading-relaxed">
+                <span 
+                    data-aos="fade-down"
+                    class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block"
+                >
+                    kontak
+                </span>
+                <h1 
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    class="text-3xl md:text-5xl font-bold mb-6"
+                >
+                    Hubungi Kami
+                </h1>
+                <p 
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    class="text-teal-100 text-lg leading-relaxed"
+                >
                     Ada pertanyaan tentang paket wisata atau ingin konsultasi custom trip?
-                Tim kami siap membantu 24/7.
+                    Tim kami siap membantu 24/7.
                 </p>
             </div>
         </header>
@@ -79,10 +100,14 @@ const contactInfo = [
             <div class="grid lg:grid-cols-3 gap-8">
 
                 <div class="lg:col-span-1 space-y-6">
-                    <div v-for="(info, idx) in contactInfo" :key="idx"
-                        class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition group">
-                        <div
-                            class="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-teal-100 transition">
+                    <div 
+                        v-for="(info, idx) in contactInfo" 
+                        :key="idx"
+                        data-aos="fade-right"
+                        :data-aos-delay="idx * 100"
+                        class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition group"
+                    >
+                        <div class="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-teal-100 transition">
                             <Icon :name="info.icon" size="24" class="text-teal-600" />
                         </div>
                         <h3 class="font-bold text-gray-800 text-lg">{{ info.title }}</h3>
@@ -94,9 +119,13 @@ const contactInfo = [
                         </a>
                     </div>
 
-                    <div class="bg-white p-2 rounded-xl shadow-md border border-gray-100 h-64 overflow-hidden">
+                    <div 
+                        data-aos="fade-right"
+                        data-aos-delay="300"
+                        class="bg-white p-2 rounded-xl shadow-md border border-gray-100 h-64 overflow-hidden"
+                    >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.962040003024!2d110.36622527500516!3d-7.793836277353987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a578677051381%3A0x6b7754d7e97491d0!2sMalioboro%20Yogyakarta!5e0!3m2!1sen!2sid!4v1703649553755!5m2!1sen!2sid"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63253.41590774745!2d110.34715827591653!3d-7.753877053538316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5ee1c5671249%3A0x3027a76e352bc20!2sSleman%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1766993797299!5m2!1sen!2sid"
                             width="100%" height="100%" style="border:0; border-radius: 0.75rem;" allowfullscreen=""
                             loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
@@ -104,7 +133,11 @@ const contactInfo = [
                 </div>
 
                 <div class="lg:col-span-2">
-                    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+                    <div 
+                        data-aos="fade-left"
+                        data-aos-delay="200"
+                        class="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100"
+                    >
                         <h2 class="text-2xl font-bold text-gray-800 mb-6">Kirim Pesan</h2>
 
                         <div v-if="isSent"
@@ -176,7 +209,6 @@ const contactInfo = [
         opacity: 0;
         transform: translateY(-10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);

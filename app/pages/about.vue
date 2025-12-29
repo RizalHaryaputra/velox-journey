@@ -35,14 +35,18 @@ const stats = [
 
         <header class="bg-teal-900 text-white pt-20 pb-20 px-6 text-center relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-full opacity-5">
-                <Icon name="heroicons:globe-asia-australia" class="text-[400px] absolute -right-20 -top-20" />
+                <Icon name="heroicons:globe-asia-australia" class="text-[400px] absolute -right-20 -top-20"
+                    data-aos="zoom-in" data-aos-duration="2000" />
             </div>
 
             <div class="relative z-10 max-w-3xl mx-auto">
-                <span class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">Tentang Velox
-                    Journey</span>
-                <h1 class="text-3xl md:text-5xl font-bold mb-6">Mewujudkan Perjalanan Impian Menjadi Kenyataan</h1>
-                <p class="text-teal-100 text-lg leading-relaxed">
+                <span data-aos="fade-down" class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">
+                    Tentang Velox Journey
+                </span>
+                <h1 data-aos="fade-up" data-aos-delay="100" class="text-3xl md:text-5xl font-bold mb-6">
+                    Mewujudkan Perjalanan Impian Menjadi Kenyataan
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="200" class="text-teal-100 text-lg leading-relaxed">
                     Kami percaya bahwa setiap perjalanan haruslah unik, personal, dan tak terlupakan.
                     Velox hadir untuk menghapus kerumitan dalam merencanakan liburan.
                 </p>
@@ -51,7 +55,8 @@ const stats = [
 
         <section class="container mx-auto px-6 lg:px-16 py-20">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/2 relative">
+
+                <div class="w-full md:w-1/2 relative" data-aos="fade-right" data-aos-duration="1000">
                     <div class="absolute -top-4 -left-4 w-20 h-20 bg-teal-100 rounded-full -z-10"></div>
                     <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29sbGVnZXxlbnwwfHwwfHx8MA%3D%3D"
                         alt="Our Team Working" class="rounded-2xl shadow-xl w-full object-cover h-[400px]" />
@@ -61,7 +66,7 @@ const stats = [
                     </div>
                 </div>
 
-                <div class="w-full md:w-1/2">
+                <div class="w-full md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
                     <h2 class="text-3xl font-bold text-gray-800 mb-6">Berawal dari Ransel Sederhana</h2>
                     <p class="text-gray-600 mb-4 leading-relaxed">
                         Velox Journey didirikan pada tahun 2020 oleh sekelompok mahasiswa pecinta alam yang frustrasi
@@ -86,7 +91,7 @@ const stats = [
         <section class="bg-teal-50 py-16 border-y border-teal-100">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div v-for="(stat, idx) in stats" :key="idx">
+                    <div v-for="(stat, idx) in stats" :key="idx" data-aos="fade-up" :data-aos-delay="idx * 100">
                         <h3 class="text-4xl font-bold text-teal-600 mb-1">{{ stat.value }}</h3>
                         <p class="text-gray-600 font-medium">{{ stat.label }}</p>
                     </div>
@@ -95,7 +100,7 @@ const stats = [
         </section>
 
         <section class="container mx-auto px-6 lg:px-16 py-20">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Tim di Balik Layar</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">
                     Orang-orang berdedikasi yang memastikan setiap detail perjalanan Anda terencana dengan sempurna.
@@ -103,7 +108,8 @@ const stats = [
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div v-for="member in teamMembers" :key="member.name"
+                <div v-for="(member, index) in teamMembers" :key="member.name" data-aos="fade-up"
+                    :data-aos-delay="index * 150"
                     class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group border border-gray-100">
                     <div class="h-64 overflow-hidden">
                         <img :src="member.image" :alt="member.name"
@@ -120,15 +126,18 @@ const stats = [
         </section>
 
         <section class="container mx-auto px-6 lg:px-16">
-            <div class="bg-teal-900 rounded-3xl p-8 md:p-16 text-center text-white relative overflow-hidden">
+            <div class="bg-teal-900 rounded-3xl p-8 md:p-16 text-center text-white relative overflow-hidden"
+                data-aos="zoom-in" data-aos-duration="1000">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-teal-800 rounded-full -mr-20 -mt-20 opacity-50"></div>
                 <div class="absolute bottom-0 left-0 w-40 h-40 bg-teal-800 rounded-full -ml-10 -mb-10 opacity-50"></div>
 
                 <div class="relative z-10">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">Siap Menjelajah Bersama Kami?</h2>
-                    <p class="text-teal-100 mb-8 max-w-xl mx-auto">Jangan ragu untuk menyapa. Tim kami siap membantu
-                        merancang itinerary impian Anda, gratis konsultasi!</p>
-                    <NuxtLink to="https://wa.me/6281234567890" target="_blank"
+                    <p class="text-teal-100 mb-8 max-w-xl mx-auto">
+                        Jangan ragu untuk menyapa. Tim kami siap membantu merancang itinerary impian Anda, gratis
+                        konsultasi!
+                    </p>
+                    <NuxtLink to="https://wa.me/6287855038324" target="_blank"
                         class="inline-flex items-center gap-2 bg-white text-teal-900 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
                         <Icon name="logos:whatsapp-icon" />
                         Chat Tim Kami

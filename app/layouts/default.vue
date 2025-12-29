@@ -23,7 +23,8 @@ watch(() => route.fullPath, () => {
       <div class="container mx-auto px-6 lg:px-16 h-20 flex justify-between items-center">
 
         <NuxtLink to="/" class="text-velox text-2xl font-bold text-teal-700 flex items-center gap-2 z-50 relative">
-          <img src="/images/logo.png" onerror="this.style.display='none'" alt="Velox" class="w-12 h-12 object-contain rounded-full" />
+          <img src="/images/logo.png" onerror="this.style.display='none'" alt="Velox"
+            class="w-12 h-12 object-contain rounded-full" />
           <span>Velox Journey</span>
         </NuxtLink>
 
@@ -74,8 +75,12 @@ watch(() => route.fullPath, () => {
       <div class="container mx-auto px-6 text-center">
         <p class="mb-2 text-gray-400">© {{ new Date().getFullYear() }} Velox Journey. Private Trip Specialist.</p>
         <div class="flex justify-center gap-4 text-sm text-gray-500">
-          <span class="cursor-pointer hover:text-white">Instagram</span>
-          <span class="cursor-pointer hover:text-white">WhatsApp</span>
+          <a href="https://www.instagram.com/rzalhrya_" target="_blank" class="hover:text-white">
+            Instagram
+          </a>
+          <a href="https://wa.me/87855038324" target="_blank" class="hover:text-white">
+            WhatsApp
+          </a>
         </div>
       </div>
     </footer>
@@ -100,6 +105,6 @@ div .router-link-active.contact-btn {
 }
 
 .router-link-active.text-velox {
-  color:#0f766e;
+  color: #0f766e;
 }
 </style>

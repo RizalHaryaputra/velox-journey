@@ -19,7 +19,7 @@ const formatRupiah = (num) => {
 const bookingLink = computed(() => {
     if (!packageDetail.value) return '#'
     const text = `Halo Velox, saya tertarik booking paket: ${packageDetail.value.title}`
-    return `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`
+    return `https://wa.me/6287855038324?text=${encodeURIComponent(text)}`
 })
 
 // SEO Meta Dinamis
@@ -34,11 +34,13 @@ useSeoMeta({
 <template>
     <div class="bg-gray-50 pb-20">
 
-        <header class="relative h-[50vh] min-h-[400px]">
-            <img :src="packageDetail.images[0]" class="w-full h-full object-cover" alt="Cover">
+        <header class="relative h-[50vh] min-h-[400px] overflow-hidden">
+            <img :src="packageDetail.images[0]" class="w-full h-full object-cover transform scale-105" alt="Cover"
+                data-aos="zoom-out" data-aos-duration="1500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-            <div class="absolute bottom-0 left-0 w-full py-16 text-white container px-8 md:px-16">
+            <div class="absolute bottom-0 left-0 w-full py-16 text-white container px-8 md:px-16" data-aos="fade-up"
+                data-aos-delay="200">
                 <span
                     class="bg-teal-600 text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block uppercase tracking-wide">
                     Private Trip
@@ -60,7 +62,7 @@ useSeoMeta({
 
                 <div class="lg:col-span-2 space-y-8">
 
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200" data-aos="fade-up">
                         <h2 class="text-2xl font-bold text-gray-800 mb-4">Tentang Paket Ini</h2>
                         <p class="text-gray-600 leading-relaxed">{{ packageDetail.description }}</p>
 
@@ -74,7 +76,8 @@ useSeoMeta({
                         </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200" data-aos="fade-up"
+                        data-aos-delay="100">
                         <h2 class="text-2xl font-bold text-gray-800 mb-6">Galeri Destinasi</h2>
                         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                             <img v-for="(img, idx) in packageDetail.images" :key="idx" :src="img"
@@ -83,7 +86,8 @@ useSeoMeta({
                         </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200" data-aos="fade-up"
+                        data-aos-delay="200">
                         <h2 class="text-2xl font-bold text-gray-800 mb-6">Rencana Perjalanan</h2>
 
                         <div class="space-y-8 pl-4 border-l-2 border-teal-100 ml-2">
@@ -109,7 +113,8 @@ useSeoMeta({
                 </div>
 
                 <div class="lg:col-span-1">
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-teal-100 sticky top-24">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-teal-100 sticky top-24"
+                        data-aos="fade-up" data-aos-delay="400">
                         <p class="text-gray-500 text-sm mb-1">Harga Mulai Dari</p>
                         <div class="flex items-end gap-1 mb-6">
                             <span class="text-3xl font-bold text-teal-600">Rp {{ formatRupiah(packageDetail.price)
@@ -137,10 +142,10 @@ useSeoMeta({
                             Booking via WhatsApp
                         </a>
 
-                        <button
+                        <!-- <button
                             class="block w-full border border-teal-200 text-teal-700 hover:bg-teal-50 font-bold py-3 rounded-xl transition">
                             Download Itinerary PDF
-                        </button>
+                        </button> -->
 
                         <p class="text-xs text-center text-gray-400 mt-4">
                             *Harga dapat berubah tergantung musim liburan

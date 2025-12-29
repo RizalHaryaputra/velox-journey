@@ -60,7 +60,7 @@ Berikut detailnya:
 Mohon bantuannya untuk dibuatkan itinerary. Terima kasih!
   `.trim()
 
-    const url = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`
+    const url = `https://wa.me/6287855038324?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
 }
 
@@ -76,15 +76,21 @@ const toggleInterest = (label) => {
 
 <template>
     <div class="bg-gray-50 min-h-screen pb-12">
+
         <header class="bg-teal-900 text-white pt-20 pb-20 px-6 mb-12 text-center relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-full opacity-5">
-                <Icon name="heroicons:globe-europe-africa" class="text-[400px] absolute -right-20 -top-20" />
+                <Icon name="heroicons:globe-europe-africa" class="text-[400px] absolute -right-20 -top-20"
+                    data-aos="zoom-in" data-aos-duration="2000" />
             </div>
 
             <div class="relative z-10 max-w-3xl mx-auto">
-                <span class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">custom trip</span>
-                <h1 class="text-3xl md:text-5xl font-bold mb-6">Rancang Liburan dan Wujudkan Impianmu</h1>
-                <p class="text-teal-100 text-lg leading-relaxed">
+                <span data-aos="fade-down" class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">
+                    custom trip
+                </span>
+                <h1 data-aos="fade-up" data-aos-delay="100" class="text-3xl md:text-5xl font-bold mb-6">
+                    Rancang Liburan dan Wujudkan Impianmu
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="200" class="text-teal-100 text-lg leading-relaxed">
                     Isi formulir di bawah, kami yang akan urus sisanya.
                 </p>
             </div>
@@ -92,7 +98,7 @@ const toggleInterest = (label) => {
 
         <div class="container mx-auto px-6 lg:px-16 max-w-2xl">
 
-            <div class="flex justify-between items-center mb-8 relative">
+            <div class="flex justify-between items-center mb-8 relative"  data-aos="zoom-in" data-aos-duration="2000">
                 <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -z-10"></div>
                 <div class="absolute top-1/2 left-0 h-1 bg-teal-500 -z-10 transition-all duration-500"
                     :style="{ width: ((currentStep - 1) / (totalSteps - 1)) * 100 + '%' }"></div>
@@ -109,7 +115,8 @@ const toggleInterest = (label) => {
                 </div>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden"
+                data-aos="fade-up" data-aos-delay="400">
 
                 <div v-if="currentStep === 1" class="animate-fade-in">
                     <h2 class="text-xl font-bold text-gray-800 mb-6">Mau liburan ke mana?</h2>
@@ -206,7 +213,9 @@ const toggleInterest = (label) => {
                         class="text-gray-500 font-medium hover:text-gray-800 px-4 py-2">
                         Kembali
                     </button>
-                    <div v-else></div> <button v-if="currentStep < totalSteps" @click="nextStep"
+                    <div v-else></div>
+
+                    <button v-if="currentStep < totalSteps" @click="nextStep"
                         :disabled="(currentStep === 1 && !isStep1Valid) || (currentStep === 2 && !isStep2Valid)"
                         class="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-teal-700 transition disabled:opacity-50 disabled:cursor-not-allowed">
                         Lanjut

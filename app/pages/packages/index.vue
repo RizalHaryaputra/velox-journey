@@ -7,7 +7,7 @@ const allPackages = ref([
         category: "Nature",
         price: 2500000,
         duration: "3 Hari 2 Malam",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop"
     },
     {
         id: 2,
@@ -43,7 +43,7 @@ const allPackages = ref([
         category: "Adventure",
         price: 4800000,
         duration: "4 Hari 3 Malam",
-        image: "https://images.unsplash.com/photo-1698267703889-06c41f9acba5?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        image: "https://images.unsplash.com/photo-1698267703889-06c41f9acba5?q=80&w=1229"
     },
     {
         id: 6,
@@ -52,7 +52,7 @@ const allPackages = ref([
         category: "Honeymoon",
         price: 6500000,
         duration: "3 Hari 2 Malam",
-        image: "https://images.unsplash.com/photo-1644027622521-d0ca669c40d7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fE51c2ElMjBQZW5pZGF8ZW58MHx8MHx8fDA%3D"
+        image: "https://images.unsplash.com/photo-1598324789736-4861f89564a0?q=80&w=1000"
     },
     {
         id: 7,
@@ -61,7 +61,7 @@ const allPackages = ref([
         category: "Culture",
         price: 2100000,
         duration: "2 Hari 1 Malam",
-        image: "https://images.unsplash.com/photo-1620549146260-938c38c31c13?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        image: "https://images.unsplash.com/photo-1620549146260-938c38c31c13?q=80&w=1171"
     },
     {
         id: 8,
@@ -70,7 +70,7 @@ const allPackages = ref([
         category: "Nature",
         price: 5200000,
         duration: "4 Hari 3 Malam",
-        image: "http://images.unsplash.com/photo-1580576234025-6cf2622785b7?q=80&w=722&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        image: "http://images.unsplash.com/photo-1580576234025-6cf2622785b7?q=80&w=722"
     }
 ])
 
@@ -85,23 +85,15 @@ const itemsPerPage = 6 // Menampilkan 6 item per halaman
 
 // COMPUTED: Filter & Search Logic
 const filteredPackages = computed(() => {
-    // Reset halaman ke 1 setiap kali user search/filter
-    // Note: Kita pakai watcher nanti, tapi logic utamanya di sini
-
     return allPackages.value.filter(pkg => {
-        // Filter Category
         const matchCategory = selectedCategory.value === 'All' || pkg.category === selectedCategory.value
-
-        // Filter Search (Case Insensitive)
         const query = searchQuery.value.toLowerCase()
         const matchSearch = pkg.title.toLowerCase().includes(query) || pkg.location.toLowerCase().includes(query)
-
         return matchCategory && matchSearch
     })
 })
 
 // COMPUTED: Pagination Slice
-// Mengambil data yang sudah difilter, lalu potong sesuai halaman
 const paginatedPackages = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage
     const end = start + itemsPerPage
@@ -131,28 +123,30 @@ const changePage = (page) => {
 
         <header class="bg-teal-900 text-white pt-20 pb-20 px-6 text-center relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-full opacity-5">
-                <Icon name="heroicons:globe-americas" class="text-[400px] absolute -right-20 -top-20" />
+                <Icon name="heroicons:globe-americas" class="text-[400px] absolute -right-20 -top-20" data-aos="zoom-in"
+                    data-aos-duration="2000" />
             </div>
 
             <div class="relative z-10 max-w-3xl mx-auto">
-                <span class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">Paket Wisata</span>
-                <h1 class="text-3xl md:text-5xl font-bold mb-6">Jelajahi Paket Wisata yang Anda Impikan</h1>
-                <p class="text-teal-100 text-lg leading-relaxed">
+                <span data-aos="fade-down" class="text-teal-400 font-bold tracking-widest uppercase text-sm mb-2 block">
+                    Paket Wisata
+                </span>
+                <h1 data-aos="fade-up" data-aos-delay="100" class="text-3xl md:text-5xl font-bold mb-6">
+                    Jelajahi Paket Wisata yang Anda Impikan
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="200" class="text-teal-100 text-lg leading-relaxed">
                     Temukan destinasi impian Anda dari pegunungan hingga dasar laut.
                 </p>
             </div>
         </header>
 
-        <div class="container mx-auto px-6 lg:px-16 mt-8">
-
+        <div class="container mx-auto px-6 lg:px-16 mt-8" data-aos="fade-up" data-aos-delay="300">
             <div
                 class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col lg:flex-row gap-6 items-center justify-between">
-
                 <div class="w-full lg:w-7/12">
                     <div
                         class="flex items-center w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus-within:ring-2 focus-within:ring-teal-500 transition">
                         <Icon name="heroicons:magnifying-glass" class="text-gray-400 text-xl flex-shrink-0" />
-
                         <input v-model="searchQuery" type="text" placeholder="Cari destinasi..."
                             class="flex-grow bg-transparent border-none outline-none focus:ring-0 text-sm ml-3 text-gray-700 placeholder-gray-400 w-full min-w-0" />
                     </div>
@@ -170,13 +164,12 @@ const changePage = (page) => {
                         </button>
                     </div>
                 </div>
-
             </div>
         </div>
 
         <div class="container mx-auto px-6 lg:px-16 py-12">
 
-            <div v-if="filteredPackages.length === 0" class="text-center py-20">
+            <div v-if="filteredPackages.length === 0" class="text-center py-20" data-aos="fade-in">
                 <Icon name="heroicons:face-frown" class="text-6xl text-gray-300 mb-4" />
                 <h3 class="text-xl font-bold text-gray-600">Yah, tidak ditemukan</h3>
                 <p class="text-gray-400">Coba ganti kata kunci atau kategori lain.</p>
@@ -187,10 +180,11 @@ const changePage = (page) => {
             </div>
 
             <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <PackageCard v-for="item in paginatedPackages" :key="item.id" :paket="item" />
+                <PackageCard v-for="(item, index) in paginatedPackages" :key="item.id" :paket="item" data-aos="fade-up"
+                    :data-aos-delay="index * 100" />
             </div>
 
-            <div v-if="totalPages > 1" class="flex justify-center gap-2">
+            <div v-if="totalPages > 1" class="flex justify-center gap-2" data-aos="fade-in" data-aos-delay="200">
                 <button @click="changePage(currentPage - 1)" :disabled="currentPage === 1"
                     class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition">
                     <Icon name="heroicons:chevron-left" />
@@ -220,7 +214,6 @@ const changePage = (page) => {
 </template>
 
 <style scoped>
-/* Utility class buat menyembunyikan scrollbar di filter mobile */
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
