@@ -1,75 +1,77 @@
-# Nuxt Minimal Starter
+# 🏔️ Velox Journey - Private Trip Specialist
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![Velox Journey Banner](public/images/logo.png)
 
-## Setup
+> **Website Travel Agent Modern berbasis Nuxt 4.**
+>
+> Project ini adalah platform pemesanan paket wisata private trip yang menawarkan pengalaman pengguna (UX) yang mulus, desain responsif, dan interaksi yang menarik.
 
-Make sure to install dependencies:
+![Nuxt 4](https://img.shields.io/badge/Nuxt_3-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+## ✨ Fitur Utama
+
+Project ini dilengkapi dengan berbagai fitur modern:
+
+* **🎨 Modern UI/UX:** Desain bersih dengan Tailwind CSS dan animasi interaktif (AOS).
+* **📱 Fully Responsive:** Tampilan optimal di Desktop, Tablet, dan Mobile (dilengkapi Mobile Drawer Menu).
+* **🔍 Smart Catalog:** Fitur pencarian (Search), filter kategori, dan pagination client-side.
+* **📄 Dynamic Pages:** Halaman detail paket wisata yang dinamis menggunakan Dynamic Routing `[id].vue`.
+* **✨ Custom Trip Wizard:** Formulir pemesanan bertahap (Multi-step Form) dengan progress bar interaktif.
+* **🚀 SEO Optimized:** Menggunakan `useSeoMeta` untuk Meta Tags dinamis di setiap halaman.
+* **⚡ State Management:** Pengelolaan data terpusat menggunakan `Composables`.
+
+## 🛠️ Teknologi yang Digunakan
+
+* **Framework:** [Nuxt 4](https://nuxt.com/) (Vue.js 3)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Icons:** [Nuxt Icon](https://nuxt.com/modules/icon) (Iconify)
+* **Animation:** [AOS](https://michalsnik.github.io/aos/) (Animate On Scroll)
+* **Deployment:** Vercel
+
+## 📂 Struktur Project
+
+Project ini menggunakan struktur folder Nuxt 3 terbaru dengan direktori `app/`:
 
 ```bash
-# npm
+velox-journey/
+├── app/
+│   ├── assets/       # File CSS global
+│   ├── components/   # Komponen Vue reusable (Card, Navbar, etc)
+│   ├── composables/  # Logic & Data terpusat (usePackages.js)
+│   ├── layouts/      # Layout utama website
+│   ├── pages/        # Halaman routing otomatis
+│   └── plugins/      # Plugin pihak ketiga (AOS)
+├── public/           # Aset statis (Gambar, Logo)
+└── nuxt.config.ts    # Konfigurasi utama Nuxt
+
+---
+
+## 🚀 Cara Menjalankan (Local)
+
+Pastikan **Node.js** sudah terinstall di komputer Anda.
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/RizalHaryaputra/velox-journey.git
+cd velox-journey
+
+### 2️⃣ Install Dependencies
+```bash
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+### 3️⃣ Jalankan Development Server
 ```bash
-# npm
 npm run dev
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
+### 4️⃣ Buka di Browser
+Buka alamat berikut di browser Anda:
 ```bash
-# npm
-npm run build
+http://localhost:3000
 
-# pnpm
-pnpm build
 
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 👤 Author
+Rizal Haryaputra
+GitHub: @RizalHaryaputra
+Email: rzlhryptr@gmail.com
