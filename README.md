@@ -1,12 +1,10 @@
 # 🏔️ Velox Journey - Private Trip Specialist
 
-![Velox Journey Banner](public/images/logo.png)
-
 > **Website Travel Agent Modern berbasis Nuxt 4.**
 >
 > Project ini adalah platform pemesanan paket wisata private trip yang menawarkan pengalaman pengguna (UX) yang mulus, desain responsif, dan interaksi yang menarik.
 
-![Nuxt 4](https://img.shields.io/badge/Nuxt_3-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)
+![Nuxt 4](https://img.shields.io/badge/Nuxt_4-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
@@ -75,6 +73,6 @@ http://localhost:3000
 ```
 
 ## 👤 Author
-Rizal Haryaputra
-GitHub: @RizalHaryaputra
-Email: rzlhryptr@gmail.com
+* Rizal Haryaputra
+* GitHub: @RizalHaryaputra
+* Email: rzlhryptr@gmail.com
